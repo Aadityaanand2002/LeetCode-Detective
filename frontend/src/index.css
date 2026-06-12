@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  color-scheme: dark;
+}
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* Dark deep blue/black base */
+  background-color: #020617;
+  color: #f8fafc;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Perspective Grid Floor */
+.cyber-grid-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 60vh;
+  perspective: 800px;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.cyber-grid {
+  position: absolute;
+  width: 200vw;
+  height: 200vh;
+  bottom: -50vh;
+  left: -50vw;
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.25) 1px, transparent 1px);
+  transform: rotateX(80deg);
+  transform-origin: center top;
+  /* Fade out as it goes further back */
+  mask-image: linear-gradient(to bottom, transparent 10%, black 70%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 10%, black 70%);
+}
+
+/* Glowing Horizon Line */
+.cyber-horizon {
+  position: fixed;
+  top: 40vh;
+  left: 0;
+  width: 100vw;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #06b6d4, transparent);
+  box-shadow: 0 0 30px 15px rgba(6, 182, 212, 0.2), 0 -20px 60px rgba(14, 165, 233, 0.15);
+  z-index: -2;
+}
+
+/* Dark sky glow */
+.cyber-sky-glow {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150vw;
+  height: 40vh;
+  background: radial-gradient(ellipse at bottom, rgba(14, 165, 233, 0.15), transparent 60%);
+  z-index: -3;
+}
+
+/* Top Abstract Arc */
+.arc-top {
+  position: fixed;
+  top: -45vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150vw;
+  height: 60vh;
+  border-radius: 50%;
+  border-bottom: 2px solid rgba(6, 182, 212, 0.6);
+  box-shadow: inset 0 -10px 40px rgba(14, 165, 233, 0.2), 0 20px 60px rgba(6, 182, 212, 0.15);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Bottom Abstract Arc */
+.arc-bottom {
+  position: fixed;
+  bottom: -40vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150vw;
+  height: 60vh;
+  border-radius: 50%;
+  border-top: 2px solid rgba(6, 182, 212, 0.6);
+  box-shadow: inset 0 10px 40px rgba(14, 165, 233, 0.2), 0 -20px 60px rgba(6, 182, 212, 0.15);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Base Noise Texture for Premium Feel */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  @apply bg-[#020617]/60 backdrop-blur-[40px] border border-cyan-500/20 shadow-[0_8px_32px_rgba(0,0,0,0.6)] rounded-2xl;
+  box-shadow: inset 0 0 0 1px rgba(6, 182, 212, 0.1), 0 20px 40px -10px rgba(0, 0, 0, 0.8);
+}
+
+.glass-card {
+  @apply bg-[#0f172a]/60 backdrop-blur-[24px] border border-cyan-500/10 hover:bg-[#1e293b]/70 hover:border-cyan-500/40 transition-all duration-500 rounded-2xl;
+  box-shadow: inset 0 0 0 1px rgba(6, 182, 212, 0.05);
+}
+
+/* Premium Buttons - Cyan */
+.btn-primary {
+  @apply px-6 py-3 bg-cyan-500 text-[#020617] font-bold rounded-lg hover:bg-cyan-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm shadow-[0_0_20px_rgba(6,182,212,0.4)];
+}
+
+.btn-secondary {
+  @apply px-5 py-2.5 bg-[#0f172a]/80 border border-cyan-500/30 text-cyan-400 font-medium rounded-lg hover:bg-cyan-500/10 hover:text-cyan-300 transition-all duration-200 inline-flex items-center justify-center gap-2 text-sm shadow-[0_0_15px_rgba(6,182,212,0.05)];
+}
