@@ -113,7 +113,7 @@ function Home() {
                         <span className="text-white font-semibold tracking-tight text-lg">LeetCode Detective</span>
                     </div>
                     <div className="flex items-center gap-4">
-                        <a href="https://github.com/adityaanand15902/LeetCode-Contest-Plagarism-Detector" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                        <a href="https://github.com/Aadityaanand2002/LeetCode-Detective" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">
                             <Github className="w-5 h-5" />
                         </a>
                         <Link to="/generate-report" className="text-sm font-medium text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-md transition-colors border border-white/10">
@@ -383,7 +383,7 @@ function Home() {
                     </div>
                     <div className="flex gap-6">
                         <a href="#" className="hover:text-white transition-colors">Documentation</a>
-                        <a href="https://github.com/adityaanand15902/LeetCode-Contest-Plagarism-Detector" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
+                        <a href="https://github.com/Aadityaanand2002/LeetCode-Detective" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
                     </div>
                 </div>
             </footer>

@@ -2,7 +2,7 @@
   <h1>🕵️‍♂️ LeetCode Detective</h1>
   <p><em>Identify plagiarism clusters and code-copying rings in LeetCode contests using graph analysis.</em></p>
 
-  <a href="YOUR_LIVE_DEMO_URL" target="_blank">
+  <a href="https://leetcode-detective-five.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel" alt="Live Demo" />
   </a>
   <br />
@@ -36,7 +36,7 @@
 
 ## 🚀 Live Demo & Deployment
 
-You can use the live frontend directly here: **[Live Demo](YOUR_LIVE_DEMO_URL)  Please allow sometime for the backend on render to boot for first time (~ 2 minutes) **
+You can use the live frontend directly here: **[Live Demo](https://leetcode-detective-five.vercel.app)  Please allow sometime for the backend on render to boot for first time (~ 2 minutes) **
 
 ### Want to deploy your own?
 1. **Frontend**: Import the `frontend` folder to Vercel and set `VITE_API_URL` to your backend URL.
